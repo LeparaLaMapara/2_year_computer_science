@@ -4,7 +4,7 @@ the setupPropeller() function needs to create a rectangular body to represent th
 
 To implement this step, you can modify the setupPropeller() function in the physics.js file as follows:
 
-```python
+```javascript
 function setupPropeller() {
   propeller = Bodies.rectangle(150, 480, 200, 15, { isStatic: true, angle: angle });
   World.add(engine.world, [propeller]);
