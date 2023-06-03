@@ -22,10 +22,10 @@ __________________________
 Step 2 involves updating the propeller's angle and angular velocity in the drawPropeller() function, as well as adjusting the angle speed based on arrow key presses in the keyPressed() function.
 
 In the drawPropeller() function:
-  - Set the angle of the propeller to the global variable angle.
-  - Set the angular velocity of the propeller to the global variable angleSpeed.
-  - Update the angle variable by adding the angleSpeed value to it.
-  - Draw the propeller on the canvas using the drawVertices() helper function.
+- Set the angle of the propeller to the global variable angle.
+- Set the angular velocity of the propeller to the global variable angleSpeed.
+- Update the angle variable by adding the angleSpeed value to it.
+- Draw the propeller on the canvas using the drawVertices() helper function.
 
 Here's the updated code for drawPropeller() in the physics.js file:
 
