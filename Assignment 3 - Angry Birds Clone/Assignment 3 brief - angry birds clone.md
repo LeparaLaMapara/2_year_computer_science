@@ -154,7 +154,7 @@ Here's the updated code for the setupTower() function:
 
 
 ```js
-Row based
+// Row based
 
 function setupTower() {
   var boxSize = 80; // Size of each box
