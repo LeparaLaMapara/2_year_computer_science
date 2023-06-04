@@ -150,7 +150,12 @@ Step 4, which involves creating a tower of boxes, follow these steps:
   - Add the boxes to the physics world using World.add().
 
 Here's the updated code for the setupTower() function:
+
+
+
 ```js
+Row based
+
 function setupTower() {
   var boxSize = 80; // Size of each box
   var towerHeight = 6; // Number of rows in the tower
@@ -179,6 +184,29 @@ function setupTower() {
   World.add(engine.world, boxes); // Add all the box bodies to the physics world
 }
 
+// Col based 
+function setupTower() {
+  var boxSize = 80; // Size of each box
+  var towerHeight = 6; // Number of rows in the tower
+  var towerWidth = 3; // Number of columns in the tower
+  var towerOffsetX = 200; // X-coordinate offset for the tower
+  var towerOffsetY = height - towerHeight * boxSize - 20; // Y-coordinate offset for the tower
+
+  for (var col = 0; col < towerWidth; col++) {
+    for (var row = 0; row < towerHeight; row++) {
+      var x = towerOffsetX + col * boxSize;
+      var y = towerOffsetY + row * boxSize;
+
+      var box = Bodies.rectangle(x, y, boxSize, boxSize);
+      boxes.push(box);
+
+      var shadeOfGreen = color(random(50, 150), random(150, 255), random(50, 150));
+      colors.push(shadeOfGreen);
+    }
+  }
+
+  World.add(engine.world, boxes);
+}
 ```
 
 Make sure to add the necessary variables and arrays to the beginning of the file:
@@ -195,12 +223,12 @@ var colors = []; // Array to store colors of the boxes
 ________________________________
 Step 5, which involves drawing the tower of boxes in different shades of green, follow these steps:
 
-    - Amend the drawTower() function in the physics.js file.
-    - Use a for loop to iterate over the boxes array.
-    - Inside the loop, retrieve the box body and its corresponding color from the boxes and colors arrays, respectively.
-    - Set the fill color to the retrieved color using fill().
-    - Draw the box using the drawVertices() helper function, passing in the box's vertices.
-    - Close the loop.
+  - Amend the drawTower() function in the physics.js file.
+  - Use a for loop to iterate over the boxes array.
+  - Inside the loop, retrieve the box body and its corresponding color from the boxes and colors arrays, respectively.
+  - Set the fill color to the retrieved color using fill().
+  - Draw the box using the drawVertices() helper function, passing in the box's vertices.
+  - Close the loop.
 
 Here's the updated code for the drawTower() function:
 ```js
