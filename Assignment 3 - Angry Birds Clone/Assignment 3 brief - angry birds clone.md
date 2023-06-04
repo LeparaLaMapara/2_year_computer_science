@@ -64,14 +64,17 @@ Here's the updated code for drawPropeller() in the physics.js file:
 
 ```js
 function drawPropeller() {
-  push();
+  push(); // This function is used to push the current drawing settings onto a stack. 
+  // It allows us to temporarily change the drawing state without affecting other elements drawn afterwards.
   Body.setAngle(propeller, angle);
   Body.setAngularVelocity(propeller, angleSpeed);
   angle += angleSpeed;
 
-  fill(128);
+  fill(0, 255, 0); // Set fill color to green (R: 0, G: 255, B: 0)
   drawVertices(propeller.vertices);
   pop();
+  // This function is used to restore the drawing settings previously saved with push(). 
+  // It ensures that any changes made within the push() and pop() blocks do not affect other elements drawn outside of them.
 }
 ```
 
