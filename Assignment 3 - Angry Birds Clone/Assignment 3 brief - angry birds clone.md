@@ -156,22 +156,28 @@ function setupTower() {
   var towerWidth = 3; // Number of columns in the tower
   var towerOffsetX = 200; // X-coordinate offset for the tower
   var towerOffsetY = height - towerHeight * boxSize - 20; // Y-coordinate offset for the tower
+  // Calculates the Y-coordinate offset for the tower based on the canvas height, number of rows, box size, and additional spacing.
+  
 
+  // Loop through each row of the tower
   for (var row = 0; row < towerHeight; row++) {
+    // Loop through each column of the tower
     for (var col = 0; col < towerWidth; col++) {
-      var x = towerOffsetX + col * boxSize;
-      var y = towerOffsetY + row * boxSize;
+      var x = towerOffsetX + col * boxSize; // Calculate the x-coordinate of the current box
+      var y = towerOffsetY + row * boxSize; // Calculate the y-coordinate of the current box
 
-      var box = Bodies.rectangle(x, y, boxSize, boxSize);
-      boxes.push(box);
+      var box = Bodies.rectangle(x, y, boxSize, boxSize); // Create a box body at the specified position and size
+      boxes.push(box); // Add the box body to the boxes array
 
+      // Generate a random shade of green for the box color
       var shadeOfGreen = color(random(50, 150), random(150, 255), random(50, 150));
-      colors.push(shadeOfGreen);
+      colors.push(shadeOfGreen); // Add the color to the colors array
     }
   }
 
-  World.add(engine.world, boxes);
+  World.add(engine.world, boxes); // Add all the box bodies to the physics world
 }
+
 ```
 
 Make sure to add the necessary variables and arrays to the beginning of the file:
