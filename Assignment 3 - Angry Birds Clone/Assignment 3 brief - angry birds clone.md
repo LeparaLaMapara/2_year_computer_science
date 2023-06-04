@@ -235,20 +235,30 @@ function setupSlingshot() {
   var birdY = height - 100; // Y-coordinate of the slingshot bird
   var birdRadius = 20; // Radius of the slingshot bird
 
+  // Create the slingshot bird as a circular body
   slingshotBird = Bodies.circle(birdX, birdY, birdRadius, {
     friction: 0,
     restitution: 0.95,
   });
+
+  // Increase the mass of the slingshot bird
   Matter.Body.setMass(slingshotBird, slingshotBird.mass * 10);
+
+  // Add the slingshot bird to the physics world
   World.add(engine.world, slingshotBird);
 
+  // Set up the slingshot constraint options
   var constraintOptions = {
     bodyA: null,
     pointB: { x: birdX, y: birdY },
     stiffness: 0.01,
     damping: 0.0001,
   };
+
+  // Create the slingshot constraint
   slingshotConstraint = Constraint.create(constraintOptions);
+
+  // Add the slingshot constraint to the physics world
   World.add(engine.world, slingshotConstraint);
 }
 ```
