@@ -104,18 +104,22 @@ Step 3 involves creating birds when the 'b' key is pressed, updating the drawBir
 - Here's the updated code for drawBirds() in the physics.js file:
 ```js
 function drawBirds() {
-  push();
-  for (var i = birds.length - 1; i >= 0; i--) {
-    var bird = birds[i];
-    fill(255);
-    drawVertices(bird.vertices);
+  push(); // Save the current drawing style settings
 
+  // Loop through the birds array in reverse order
+  for (var i = birds.length - 1; i >= 0; i--) {
+    var bird = birds[i]; // Get the current bird
+
+    fill(225, 0, 0); // Set fill color to red (R: 0, G: 255, B: 0)
+    drawVertices(bird.vertices); // Draw the bird using its vertices
+
+    // Check if the bird is off-screen
     if (isOffScreen(bird)) {
-      removeFromWorld(bird);
-      birds.splice(i, 1);
+      removeFromWorld(bird); // Remove the bird from the physics world
+      birds.splice(i, 1); // Remove the bird from the birds array
     }
   }
-  pop();
+  pop(); // Restore the previous drawing style settings
 }
 ```
 - Implement the removeFromWorld() function. This function removes a body from the physics world:
