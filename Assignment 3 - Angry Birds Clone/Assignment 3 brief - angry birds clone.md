@@ -1,32 +1,32 @@
  # Summary of the game:
  
- Componets of the game:
-  Propeller System:
-    - The propeller is a static rectangular body located at (150, 480) with a size of (200, 15).
-    - You can control the propeller's angle by pressing the left and right arrow keys, which will change its angular velocity.
-    - The propeller is drawn on the screen using the drawPropeller() function.
+ 
+Propeller System:
+  - The propeller is a static rectangular body located at (150, 480) with a size of (200, 15).
+  - You can control the propeller's angle by pressing the left and right arrow keys, which will change its angular velocity.
+  - The propeller is drawn on the screen using the drawPropeller() function.
 
-  Bird Creation:
-    - Pressing the 'b' key will create a bird at the current mouse position using the setupBird() function.
-    - The birds are stored in an array and their movement is simulated in the physics world.
-    - The drawBirds() function loops over the birds array and draws them on the screen using the drawVertices() function.
-    - Birds that go off-screen are removed from the physics world and the array.
+Bird Creation:
+  - Pressing the 'b' key will create a bird at the current mouse position using the setupBird() function.
+  - The birds are stored in an array and their movement is simulated in the physics world.
+  - The drawBirds() function loops over the birds array and draws them on the screen using the drawVertices() function.
+  - Birds that go off-screen are removed from the physics world and the array.
 
-  Tower of Boxes:
-    - The setupTower() function creates a tower of boxes with dimensions 80x80 pixels.
-    - The tower is six boxes high and three boxes wide, forming a structure.
-    - Each box has a random shade of green assigned to it from the colors array.
-    - The drawTower() function loops over the boxes array and draws each box on the screen using the drawVertices() function.
+Tower of Boxes:
+  - The setupTower() function creates a tower of boxes with dimensions 80x80 pixels.
+  - The tower is six boxes high and three boxes wide, forming a structure.
+  - Each box has a random shade of green assigned to it from the colors array.
+  - The drawTower() function loops over the boxes array and draws each box on the screen using the drawVertices() function.
 
-  Slingshot:
-    - The slingshot consists of a circular body called slingshotBird and a constraint called slingshotConstraint.
-    - The setupSlingshot() function initializes these elements, positioning them accordingly.
-    - You can control the slingshot by dragging it with the mouse to extend its position and release the mouse to launch the bird.
-    - The drawSlingshot() function draws the slingshot bird and constraint using the drawVertices() and drawConstraint() functions.
+Slingshot:
+  - The slingshot consists of a circular body called slingshotBird and a constraint called slingshotConstraint.
+  - The setupSlingshot() function initializes these elements, positioning them accordingly.
+  - You can control the slingshot by dragging it with the mouse to extend its position and release the mouse to launch the bird.
+  - The drawSlingshot() function draws the slingshot bird and constraint using the drawVertices() and drawConstraint() functions.
 
-  Additional Interactions:
-    - The game includes a ground that is automatically created and drawn.
-    - Pressing the 'r' key resets the slingshot, removing the current bird and constraint, and setting up a new slingshot.
+Additional Interactions:
+  - The game includes a ground that is automatically created and drawn.
+  - Pressing the 'r' key resets the slingshot, removing the current bird and constraint, and setting up a new slingshot.
 
 
 
