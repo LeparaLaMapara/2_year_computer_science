@@ -320,11 +320,14 @@ function draw() {
   if (countdown <= 0) {
     // Stop the game or perform any necessary actions
     noLoop();
+
+    // Display "GAME OVER" message
     textSize(64);
     fill(255, 0, 0);
     text("GAME OVER", width / 2 - 150, height / 2);
   }
 }
+
 ```
 
 - In this example, the countdown starts at 60 seconds (countdown = 60), and on each frame, it decreases by the elapsed time (1 divided by frameRate(), which gives the frame time in seconds). The countdown is displayed using the text() function, and when it reaches zero, the game is over, and the "GAME OVER" message is displayed on the screen.
