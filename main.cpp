@@ -15,7 +15,7 @@ int main()
         if (command == "exit")
             break;
 
-        advisorbot.processUserCommand(command);
+        advisorbot.processUserOption(advisorbot.getUserOption(command));
     }
 
     return 0;
